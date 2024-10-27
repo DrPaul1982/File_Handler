@@ -14,8 +14,8 @@ public class FileHandler {
             fw.write(fileContent);
             return "Success.";
 
-        } catch (Exception e) {
-            return e.getMessage();
+        } catch (IOException e) {
+            return "Error writing file " + e.getMessage();
         }
     }
 
@@ -28,7 +28,7 @@ public class FileHandler {
             }
             return stringBuilder.toString();
         } catch (IOException ex) {
-            return ex.getMessage();
+            return "Error reading file " + ex.getMessage();
         }
     }
 }
